@@ -69,6 +69,9 @@ def create_database():
         print("Databas och tabeller skapade.")
     except Error as e:
         print(f"Fel vid skapande av databas: {e}")
+    finally:
+        if conn:
+            conn.close()
 
 ## 3. save_customers_to_db och save_transaction
 ## lägger in kund och transktionsdata i databasen
@@ -76,26 +79,39 @@ def create_database():
 @task
 def save_customers_to_db(customers_df):
     print("Laddar kunddata till databasen...")
+    conn = None
     try:
         conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
+        cursor.execute("BEGIN")  # Starta transaktion
         customers_df.to_sql('customers', conn, if_exists='replace', index=False)
+        conn.commit()
         print("Kunddata inlagd.")
     except Error as e:
+        if conn:
+            conn.rollback()
         print(f"Fel vid insättning av kunddata: {e}")
     finally:
-        conn.close()
+        if conn:
+            conn.close()
 
 @task
 def save_transactions_to_db(transactions_df):
     print("Laddar transaktionsdata till databasen...")
     try:
         conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
+        cursor.execute("BEGIN")  # Starta transaktion
         transactions_df.to_sql('transactions', conn, if_exists='replace', index=False)
+        conn.commit()
         print("Transaktionsdata inlagd.")
     except Error as e:
+        if conn:
+            conn.rollback()
         print(f"Fel vid insättning av transaktionsdata: {e}")
     finally:
-        conn.close()
+        if conn:
+            conn.close()
 
 ## 4. validate_transactions validerar att alla transaktioner har giltiga konto.
 ##validate_transactions kollar att alla konton i transaktionerna 
@@ -131,19 +147,25 @@ def generera_rapport(transactions_df):
 @task
 def generate_report():
     print("🧾 Rapport från databasen...")
-    conn = sqlite3.connect(DATABASE)
-    cursor = conn.cursor()
+    conn = None
+    try:
+        conn = sqlite3.connect(DATABASE)
+        cursor = conn.cursor()
 
-    cursor.execute("SELECT COUNT(*) FROM customers")
-    customer_count = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM customers")
+        customer_count = cursor.fetchone()[0]
 
-    cursor.execute("SELECT COUNT(*) FROM transactions")
-    transaction_count = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM transactions")
+        transaction_count = cursor.fetchone()[0]
 
-    print(f"Totalt antal kunder i databasen: {customer_count}")
-    print(f"Totalt antal transaktioner i databasen: {transaction_count}")
-    conn.close()
-
+        print(f"Totalt antal kunder i databasen: {customer_count}")
+        print(f"Totalt antal transaktioner i databasen: {transaction_count}")
+    except Error as e:
+        print(f"Fel vid rapportgenerering: {e}")
+    finally:
+        if conn:
+            conn.close()
+         
 
 ## 5. bank_workflow är en prefect flow som kör alla steg i rätt ordning automatiskt.
 
