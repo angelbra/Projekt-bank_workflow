@@ -30,6 +30,7 @@ Detta projekt automatiserar validering, behandling och lagring av banktransaktio
 | Textfil        | `reporte.txt`              | Genererad rapport                    |
 | Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner |
 | execution logs |   Loggfil.txt              |    körlogg (execution logs)          |
+|  Python-paket  |  requirements.txt          |  snabbt installera alla beroenden    |
 
 ---
 
@@ -67,4 +68,9 @@ virtuella miljö:
  -  .\venv\Scripts\activate    # Windows PowerShell
  -   
  -   körlogg (execution logs) : python bank_workflow_prefect.p
+
+## Installera beroenden
+För att installera de nödvändiga paketen, kör följande kommando i terminalen:
+
+pip install -r requirements.txt
 
