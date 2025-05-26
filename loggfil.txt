@@ -1,3 +1,4 @@
+
 (venv) PS C:\Users\Angelica\OneDrive\Escritorio\code\Datakvalitet\Projekt-bank_workflow> python bank_workflow_prefect.py
 >>
 11:10:40.520 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8173
