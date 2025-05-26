@@ -1,24 +1,33 @@
 # Automatiserat arbetsflöde för banktransaktioner
 
 Detta projekt automatiserar validering, behandling och lagring av banktransaktioner med hjälp av **Prefect** – ett workflow management-verktyg i Python.
+Det inkluderar datavalidering, databaslagring, transaktionsbearbetning och rapportgenerering.
+
 
 ---
 
 ## Workflow Automation & Orchestration
 
 - **Roll:** DevOps / Workflow Engineer  
-- **Verktyg:** Prefect  
+- **Verktyg:**
+- Prefect
+- Python
+- Pandas
+- SQLite
+
 - **Huvudfil:** `Bank Workflow Prefect.py`
+
 
 ---
 
 ## Funktioner
 
-- Läser transaktionsdata från en CSV-fil  
-- Validerar datan (tar bort felaktiga rader)  
-- Identifierar misstänkta transaktioner  
-- Sparar datan i en PostgreSQL-databas  
-- Skapar en rapport med statistik över transaktionerna
+1. Läser kund- och transaktionsdata från CSV
+2. Skapar SQLite-databas med två tabeller
+3. Sparar data i databasen
+4. Validerar transaktioner (kontrollerar giltiga konton)
+5. Genererar rapport med Pandas (från CSV)
+6. Genererar rapport med SQL (från databasen)
 
 ---
 
