@@ -24,12 +24,12 @@ Detta projekt automatiserar validering, behandling och lagring av banktransaktio
 
 ## Leverabler
 
-| Filtyp         | Filnamn                    | Beskrivning                            |
+| Filtyp         | Filnamn                    | Beskrivning                          |
 |----------------|----------------------------|--------------------------------------|
-| Python-script  | `Bank Workflow Prefect.py` | Huvudfil för arbetsflödet             |
-| Textfil        | `reporte.txt`              | Genererad rapport                      |
-| Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner  |
-| Logg-exempel   | (exempel-loggfil)          | Exempel på logg från arbetsflödet     |
+| Python-script  | `Bank_Workflow_Prefect.py` | Huvudfil för arbetsflödet            |
+| Textfil        | `reporte.txt`              | Genererad rapport                    |
+| Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner |
+| execution logs |   Loggfil.txt              |    körlogg (execution logs)          |
 
 ---
 
