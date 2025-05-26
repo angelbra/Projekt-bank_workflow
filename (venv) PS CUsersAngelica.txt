@@ -1,0 +1,39 @@
+(venv) PS C:\Users\Angelica\OneDrive\Escritorio\code\Datakvalitet\Projekt-bank_workflow> python bank_workflow_prefect.py
+>>
+11:10:40.520 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8173
+See https://docs.prefect.io/3.0/manage/self-host#self-host-a-prefect-server for more information on running a dedicated Prefect server.
+11:10:46.762 | INFO    | Flow run 'wisteria-pudu' - Beginning flow run 'wisteria-pudu' for flow 'bank-workflow'
+Läser kunddata från CSV...
+Antal kunder: 1000
+11:10:47.307 | INFO    | Task run 'read_customers-ef8' - Finished in state Completed()
+Läser transaktionsdata från CSV...
+Antal transaktioner: 100000
+11:10:48.105 | INFO    | Task run 'read_transactions-26e' - Finished in state Completed()
+Skapar SQLite databas och tabeller...
+Databas och tabeller skapade.
+11:10:48.423 | INFO    | Task run 'create_database-e93' - Finished in state Completed()
+Laddar kunddata till databasen...
+Kunddata inlagd.
+11:10:48.768 | INFO    | Task run 'save_customers_to_db-45f' - Finished in state Completed()
+Laddar transaktionsdata till databasen...
+Transaktionsdata inlagd.
+11:10:50.061 | INFO    | Task run 'save_transactions_to_db-0bf' - Finished in state Completed()        
+Validerar transaktioner mot kundkonton...
+Antal ogiltiga transaktioner: 90000
+11:10:51.056 | INFO    | Task run 'validera_transaktioner-af0' - Finished in state Completed()
+🧾 Rapport med Pandas (från fil)...
+Totalt antal transaktioner: 100000
+Total summa: 2371238787.9300003 SEK
+Topp 3 avsändarländer:
+sender_country
+Sweden     80306
+Norway       951
+Denmark      918
+Name: count, dtype: int64
+11:10:51.735 | INFO    | Task run 'generera_rapport-7a2' - Finished in state Completed()
+🧾 Rapport från databasen...
+Totalt antal kunder i databasen: 1000
+Totalt antal transaktioner i databasen: 100000
+11:10:52.171 | INFO    | Task run 'generate_report-dbf' - Finished in state Completed()
+11:10:52.213 | INFO    | Flow run 'wisteria-pudu' - Finished in state Completed()
+11:10:52.225 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8173
