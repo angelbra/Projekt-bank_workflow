@@ -2,11 +2,16 @@ from prefect import flow, task
 import pandas as pd
 import sqlite3
 from sqlite3 import Error
+import os
 
-# Sökvägar till dina CSV-filer
-TRANSACTIONS_CSV = r"C:\Users\Angelica\OneDrive\Escritorio\code\Datakvalitet\Projekt-bank_workflow\transactions.csv"
-CUSTOMERS_CSV = r"C:\Users\Angelica\OneDrive\Escritorio\code\Datakvalitet\Projekt-bank_workflow\sebank_customers_with_accounts.csv"
-DATABASE = "bank_data.db"
+import os
+
+BASE_DIR = os.path.dirname(__file__)  # Carpeta donde está el script
+
+TRANSACTIONS_CSV = os.path.join(BASE_DIR, "transactions.csv")
+CUSTOMERS_CSV = os.path.join(BASE_DIR, "sebank_customers_with_accounts.csv")
+DATABASE = os.path.join(BASE_DIR, "bank_data.db")
+
 
 ## 1. read_customers och read_transactions läser CSV-filerna till Pandas DataFrames.
 @task
