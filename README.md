@@ -32,3 +32,29 @@ Detta projekt automatiserar validering, behandling och lagring av banktransaktio
 | Logg-exempel   | (exempel-loggfil)          | Exempel på logg från arbetsflödet     |
 
 ---
+
+# Projekt-bank_workflow
+
+Detta projekt implementerar ett automatiserat arbetsflöde med **Prefect** för att bearbeta bankdata.
+
+## Funktionalitet
+
+- Läser kund- och transaktionsdata från CSV-filer
+- Skapar och laddar data till en SQLite-databas
+- Validerar transaktioner mot kundtabellen
+- Genererar rapporter både från CSV-filer och från databasen
+- Felhantering med rollback vid databasoperationer
+
+## Krav
+
+- Python 3.8 eller senare
+- Prefect
+- Pandas
+- SQLite
+
+## Användning
+
+1. Aktivera din virtuella miljö:
+   ```bash
+   source venv/bin/activate   # Linux/macOS
+   .\venv\Scripts\activate    # Windows PowerShell
