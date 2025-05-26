@@ -64,5 +64,7 @@ https://github.com/WeeHorse/python-bank-project-start/blob/main/data/sebank_cust
 
 virtuella miljö:
 
-   .\venv\Scripts\activate    # Windows PowerShell
-    python bank_workflow_prefect.p
+ -  .\venv\Scripts\activate    # Windows PowerShell
+ -   
+ -   körlogg (execution logs) : python bank_workflow_prefect.p
+
