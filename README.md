@@ -53,8 +53,16 @@ Detta projekt implementerar ett automatiserat arbetsflöde med **Prefect** för 
 - SQLite
 
 ## Användning
+källor: 
+transactions.csv — innehåller alla transaktioner (pengar som skickas eller tas emot).
+sebank_customers_with_accounts.csv — innehåller kunddata och kontoinformation.
 
-1. Aktivera din virtuella miljö:
-   ```bash
-   source venv/bin/activate   # Linux/macOS
+github källor: 
+https://github.com/WeeHorse/python-bank-project-start/blob/main/data/transactions.csv
+https://github.com/WeeHorse/python-bank-project-start/blob/main/data/sebank_customers_with_accounts.csv
+
+
+virtuella miljö:
+
    .\venv\Scripts\activate    # Windows PowerShell
+    python bank_workflow_prefect.p
