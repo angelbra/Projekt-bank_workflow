@@ -15,7 +15,7 @@ Det inkluderar datavalidering, databaslagring, transaktionsbearbetning och rappo
 - Pandas
 - SQLite
 
-- **Huvudfil:** `Bank Workflow Prefect.py`
+**Huvudfil:** `Bank Workflow Prefect.py`
 
 
 ---
