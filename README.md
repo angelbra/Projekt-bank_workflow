@@ -72,15 +72,27 @@ github källor:
 https://github.com/WeeHorse/python-bank-project-start/blob/main/data/transactions.csv
 https://github.com/WeeHorse/python-bank-project-start/blob/main/data/sebank_customers_with_accounts.csv
 
+Klona repo:
+git clone https://github.com/angelbra/Projekt-bank_workflow.git
+cd Projekt-bank_workflow
 
-virtuella miljö:
+## Installation och körning
+Skapa och aktivera virtuell miljö:
 
- -  .\venv\Scripts\activate    # Windows PowerShell
- -   
- -   körlogg (execution logs) : python bank_workflow_prefect.p
+**Windows:**
+python -m venv venv
+.\venv\Scripts\activate
 
-## Installera beroenden
+**Linux/macOS:**
+python3 -m venv venv
+
+source venv/bin/activate
+
+##Installera beroenden
 För att installera de nödvändiga paketen, kör följande kommando i terminalen:
 
 pip install -r requirements.txt
+
+##Kör workflow:
+python bank_workflow_prefect.py
 
