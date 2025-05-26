@@ -26,11 +26,12 @@ Detta projekt automatiserar validering, behandling och lagring av banktransaktio
 
 | Filtyp         | Filnamn                    | Beskrivning                          |
 |----------------|----------------------------|--------------------------------------|
-| Python-script  | `Bank_Workflow_Prefect.py` | Huvudfil för arbetsflödet            |
+| Python-script  | `Bank_workflow_prefect.py` | Huvudfil för arbetsflödet            |
 | Textfil        | `reporte.txt`              | Genererad rapport                    |
 | Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner |
 | execution logs |   Loggfil.txt              |    körlogg (execution logs)          |
 |  Python-paket  |  requirements.txt          |  snabbt installera alla beroenden    |
+| notebook       |  db innehål.ipynb          | sammanfattning db innehåll           |
 
 ---
 
