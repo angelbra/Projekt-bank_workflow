@@ -24,12 +24,14 @@ Detta projekt automatiserar validering, behandling och lagring av banktransaktio
 
 ## Leverabler
 
-| Filtyp         | Filnamn                    | Beskrivning                            |
+| Filtyp         | Filnamn                    | Beskrivning                          |
 |----------------|----------------------------|--------------------------------------|
-| Python-script  | `Bank Workflow Prefect.py` | Huvudfil för arbetsflödet             |
-| Textfil        | `reporte.txt`              | Genererad rapport                      |
-| Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner  |
-| Logg-exempel   | (exempel-loggfil)          | Exempel på logg från arbetsflödet     |
+| Python-script  | `Bank_workflow_prefect.py` | Huvudfil för arbetsflödet            |
+| Textfil        | `reporte.txt`              | Genererad rapport                    |
+| Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner |
+| execution logs |   Loggfil.txt              | körlogg - logg från arbetsflödet     |
+|  Python-paket  |  requirements.txt          |  snabbt installera alla beroenden    |
+| notebook       |  db innehål.ipynb          | sammanfattning db innehåll           |
 
 ---
 
@@ -53,8 +55,23 @@ Detta projekt implementerar ett automatiserat arbetsflöde med **Prefect** för 
 - SQLite
 
 ## Användning
+källor: 
+transactions.csv — innehåller alla transaktioner (pengar som skickas eller tas emot).
+sebank_customers_with_accounts.csv — innehåller kunddata och kontoinformation.
 
-1. Aktivera din virtuella miljö:
-   ```bash
-   source venv/bin/activate   # Linux/macOS
-   .\venv\Scripts\activate    # Windows PowerShell
+github källor: 
+https://github.com/WeeHorse/python-bank-project-start/blob/main/data/transactions.csv
+https://github.com/WeeHorse/python-bank-project-start/blob/main/data/sebank_customers_with_accounts.csv
+
+
+virtuella miljö:
+
+ -  .\venv\Scripts\activate    # Windows PowerShell
+ -   
+ -   körlogg (execution logs) : python bank_workflow_prefect.p
+
+## Installera beroenden
+För att installera de nödvändiga paketen, kör följande kommando i terminalen:
+
+pip install -r requirements.txt
+
