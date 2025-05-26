@@ -36,11 +36,11 @@ Det inkluderar datavalidering, databaslagring, transaktionsbearbetning och rappo
 | Filtyp         | Filnamn                    | Beskrivning                          |
 |----------------|----------------------------|--------------------------------------|
 | Python-script  | `Bank_workflow_prefect.py` | Huvudfil för arbetsflödet            |
-| Textfil        | `reporte.txt`              | Genererad rapport                    |
+| docker         | ` Dockerfile`              | Isolera miljön                       |
 | Dokumentation  | `README.md`                | Projektbeskrivning och instruktioner |
-| execution logs |   Loggfil.txt              | körlogg - logg från arbetsflödet     |
-|  Python-paket  |  requirements.txt          |  snabbt installera alla beroenden    |
-| notebook       |  db innehål.ipynb          | sammanfattning db innehåll           |
+| execution logs |  `Loggfil.txt `            | körlogg - logg från arbetsflödet     |
+|  Python-paket  | ` requirements.txt    `    |  snabbt installera alla beroenden    |
+| notebook       | ` db innehål.ipynb    `    | sammanfattning db innehåll           |
 
 ---
 
