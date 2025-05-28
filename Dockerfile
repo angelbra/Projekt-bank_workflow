@@ -13,5 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Kopiera resten av projektet
 COPY . .
 
-# Kommando för att köra ditt Prefect-flöde
+# Kommando för att köra ditt Prefect-flöde 
 CMD ["python", "bank_workflow_prefect.py"]
